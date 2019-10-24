@@ -1,0 +1,42 @@
+RewriteEngine on
+
+#If script installed on main or sub domain use:
+#RewriteBase /
+#If script installed in sub folder use:
+#RewriteBase /foldername
+
+RewriteBase /
+
+ErrorDocument 404 /404.php
+
+#www to non www redirect
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+RewriteRule ^search/(.*)/(.*)?$ search_main.php?entity=$1&q=$2
+
+RewriteRule ^book/([0-9]+)/(.*)?$ book_main.php?link=$1&name=$2
+RewriteRule ^audiobook/([0-9]+)/(.*)?$ audiobook_main.php?link=$1&name=$2
+
+RewriteRule ^top-free-books/([0-9]+)/(.*)?$ topfreebooks_genre_main.php?id=$1&title=$2
+RewriteRule ^top-free-books?$ topfreebooks_main.php
+
+RewriteRule ^top-books/([0-9]+)/(.*)?$ toppaidbooks_genre_main.php?id=$1&title=$2
+RewriteRule ^top-books?$ toppaidbooks_main.php
+
+RewriteRule ^top-textbooks/([0-9]+)/(.*)?$ toptextbooks_genre_main.php?id=$1&title=$2
+RewriteRule ^top-textbooks?$ toptextbooks_main.php
+
+RewriteRule ^top-audiobooks/([0-9]+)/(.*)?$ topaudiobooks_genre_main.php?id=$1&title=$2
+RewriteRule ^top-audiobooks?$ topaudiobooks_main.php
+
+RewriteRule ^privacy?$ privacy_main.php
+RewriteRule ^dmca?$ dmca_main.php
+RewriteRule ^contact?$ contact_main.php
+RewriteRule ^req?$ req.php
+
+RewriteRule ^countries?$ countries_main.php
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
