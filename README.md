@@ -18,3 +18,4 @@ File :
 2. index.php
 3. ops.php
 4. robots.php
+5. READ ME.txt (optional)
