@@ -39,8 +39,8 @@ function ocim_data_movie( $nama = 'home_m_', $page = 1, $get = 'getNowPlayingMov
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -84,8 +84,8 @@ function ocim_data_genre( $nama = 'home_g_', $id = '', $page = 1, $get = 'GetGen
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -119,7 +119,7 @@ function ocim_data_tv( $nama = 'home_tv_', $page = 1, $get = 'getOnTheAirTVShows
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[name]) {
+                        	if ($row['name']) {
                                 	$item['title'] = $row['name'];
                         	} else {
                                 	$item['title'] = $row['original_name'];
@@ -129,8 +129,8 @@ function ocim_data_tv( $nama = 'home_tv_', $page = 1, $get = 'getOnTheAirTVShows
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -168,8 +168,8 @@ function ocim_data_search_movie( $query = '', $page = 1) {
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -192,7 +192,7 @@ function ocim_data_search_tv( $query = '', $page = 1) {
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[name]) {
+                        	if ($row['name']) {
                                 	$item['title'] = $row['name'];
                         	} else {
                                 	$item['title'] = $row['original_name'];
@@ -202,8 +202,8 @@ function ocim_data_search_tv( $query = '', $page = 1) {
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -269,7 +269,7 @@ if ( isset($_GET['id'] ) || strposa($uri, options('url_movie') ) ) {
                 $row = $tmdb->getMovie($TMDBID);
         }
 
-                if ( !$row[status_code] == 34 ) {
+                if ( !$row['status_code'] == 34 ) {
                         $title          = $row['title'];
                         $cm['id']       = $TMDBID;
                         $cm['title']    = $row['title'];
@@ -286,15 +286,15 @@ if ( isset($_GET['id'] ) || strposa($uri, options('url_movie') ) ) {
                         $runtime        = $row['runtime'];
                         $vote_count     = $row['vote_count'];
 
-                        if ($row[images]['backdrops']!=null) {
-                                shuffle($row[images]['backdrops']);
-                                foreach($row[images]['backdrops'] as $result) {
+                        if ($row['images']['backdrops']!=null) {
+                                shuffle($row['images']['backdrops']);
+                                foreach($row['images']['backdrops'] as $result) {
                                         $images = 'https://image.tmdb.org/t/p/original' . $result['file_path'];
                                         $w780 = 'https://image.tmdb.org/t/p/w780' . $result['file_path'];
                                 }
-                        } elseif ($row[images]['posters']!=null){
-                                shuffle($row[images]['posters']);
-                                foreach($row[images]['posters'] as $result) {
+                        } elseif ($row['images']['posters']!=null){
+                                shuffle($row['images']['posters']);
+                                foreach($row['images']['posters'] as $result) {
                                         $images = 'https://image.tmdb.org/t/p/original' . $result['file_path'];
                                         $w780 = 'https://image.tmdb.org/t/p/w780' . $result['file_path'];
                                 }
@@ -316,9 +316,9 @@ if ( isset($_GET['id'] ) || strposa($uri, options('url_movie') ) ) {
      	     	        if (is_array($row['genres'])){
              	     	        foreach($row['genres'] as $result) : $category = $result['name'];$categoryid = $result['id'];endforeach;
      	     	        }
-     	     	        if (is_array($row['credits'][cast]))
+     	     	        if (is_array($row['credits']['cast']))
      	     	        {       
-             	     	        $ic = 0;$casts = array();foreach($row['credits'][cast] as $result) :$casts[] = '<span itemprop="actor" itemscope itemtype="https://schema.org/Person"><span itemprop="name">'.$result['name'].'</span></span>';if ($ic++ == 10) break;endforeach;
+             	     	        $ic = 0;$casts = array();foreach($row['credits']['cast'] as $result) :$casts[] = '<span itemprop="actor" itemscope itemtype="https://schema.org/Person"><span itemprop="name">'.$result['name'].'</span></span>';if ($ic++ == 10) break;endforeach;
              	     	        $cast = implode(", ",$casts);
      	     	        }
                         if($row['vote_average'] > 0) {
@@ -455,9 +455,9 @@ if ( $_GET['action'] == 'tv' || strposa($uri, options('url_tv') ) ) :
                         $number_of_seasons = $row['number_of_seasons'];
                         $status = $row['status'];
 
-                        if ($row[images]['backdrops']!=null) {
-                                shuffle($row[images]['backdrops']);
-                                foreach($row[images]['backdrops'] as $result) {
+                        if ($row['images']['backdrops']!=null) {
+                                shuffle($row['images']['backdrops']);
+                                foreach($row['images']['backdrops'] as $result) {
                                         $images = 'https://image.tmdb.org/t/p/original' . $result['file_path'];
                                         $w600 = 'https://image.tmdb.org/t/p/w600' . $result['file_path'];
                                 }
@@ -482,9 +482,9 @@ if ( $_GET['action'] == 'tv' || strposa($uri, options('url_tv') ) ) :
      	     	        if (is_array($row['genres'])){
              	     	        foreach($row['genres'] as $result) : $category = $result['name'];$categoryid = $result['id'];endforeach;
      	     	        }
-     	     	        if (is_array($row['credits'][cast]))
+     	     	        if (is_array($row['credits']['cast']))
      	     	        {       
-             	     	        $ic = 0;$casts = array();foreach($row['credits'][cast] as $result) :$casts[] = '<span itemprop="actor" itemscope itemtype="https://schema.org/Person">'.$result['name'].'</span>';if ($ic++ == 10) break;endforeach;
+             	     	        $ic = 0;$casts = array();foreach($row['credits']['cast'] as $result) :$casts[] = '<span itemprop="actor" itemscope itemtype="https://schema.org/Person">'.$result['name'].'</span>';if ($ic++ == 10) break;endforeach;
              	     	        $cast = implode(", ",$casts);
      	     	        }
                         if($row['vote_average'] > 0) {
@@ -510,9 +510,9 @@ if ( $_GET['action'] == 'tv' || strposa($uri, options('url_tv') ) ) :
      	     	     	}
 
                         if($str[2] != '') {
-                            if($row3[still_path])
+                            if($row3['still_path'])
                             {
-                                $images = 'https://image.tmdb.org/t/p/original'.$row3[still_path];
+                                $images = 'https://image.tmdb.org/t/p/original'.$row3['still_path'];
                             }
                         }
                 } else {

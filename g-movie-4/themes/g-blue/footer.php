@@ -51,18 +51,18 @@
 				</ul>
 			</div>
 			<div class="site-credit col-md-12 text-center"> &copy;<?php echo date('Y') ?>
-				<a href="<?php echo site_url() ?>""><?php echo config('sitename') ?></a> - All rights reserved. 
-			</div>
-			<div class="site-note col-md-12 text-center">Disclaimer: All of the free movies found on this website are hosted on third-party servers that are freely available to watch online on <?php echo config('sitename') ?> for all internet users. Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves. <?php echo config('sitename') ?> is not responsible for the accuracy, compliance, copyright, legality, decency, or any other aspect of the content of other linked sites. In case of any copyright claims, Please contact the source websites directly file owners or host sites.
-By accessing this site you agree to be bound by our Privacy Policy.</div>
-			<div id="counter" data-min="12234" data-max="12733">
-				<span class="globe">
-					<span class="fa fa-globe"></span>
-				</span>
-				<span class="counter-value"><script type="text/javascript"> document.write(Math.floor(Math.random()*12733)); </script></span> Users Online
-			</div>
+			<a href="<?php echo site_url() ?>""><?php echo config('sitename') ?></a> - All rights reserved. 
+		</div>
+		<div class="site-note col-md-12 text-center">Disclaimer: All of the free movies found on this website are hosted on third-party servers that are freely available to watch online on <?php echo config('sitename') ?> for all internet users. Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves. <?php echo config('sitename') ?> is not responsible for the accuracy, compliance, copyright, legality, decency, or any other aspect of the content of other linked sites. In case of any copyright claims, Please contact the source websites directly file owners or host sites.
+		By accessing this site you agree to be bound by our Privacy Policy.</div>
+		<div id="counter" data-min="12234" data-max="12733">
+			<span class="globe">
+				<span class="fa fa-globe"></span>
+			</span>
+			<span class="counter-value"><script type="text/javascript"> document.write(Math.floor(Math.random()*12733)); </script></span> Users Online
 		</div>
 	</div>
+</div>
 </footer>
 <script type="text/javascript" src="//code.jquery.com/jquery-2.2.0.min.js" defer></script>
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
@@ -70,4 +70,4 @@ By accessing this site you agree to be bound by our Privacy Policy.</div>
 <script type="text/javascript" src="/assets/js/scripts.min.js" defer></script>
 <?php echo histats_write() ?>
 </body>
-								</html>
+</html>

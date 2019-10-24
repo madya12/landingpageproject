@@ -34,7 +34,7 @@ include('header.php');
    <div style="min-height:500px !important">
       <div class="">
           <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_m_',$page, 'getNowPlayingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 1) as $row ) {
@@ -54,7 +54,7 @@ include('header.php');
                <div class="owl-stage-outer">
                   <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 1725px;">
 				  <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_m_',$page, 'getNowPlayingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 18) as $row ) {
@@ -98,7 +98,7 @@ include('header.php');
                   <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 1725px;">
 
 				  <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_movie_upcoming_',$page, 'getUpcomingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 18) as $row ) {
@@ -143,7 +143,7 @@ include('header.php');
                   <div class="owl-stage" style="transform: translate3d(-603px, 0px, 0px); transition: 0s; width: 1725px;">
 				  
                      <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_ontheair_',$page, 'getOnTheAirTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 18) as $row ) {

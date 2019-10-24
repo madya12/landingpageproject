@@ -19,7 +19,7 @@ include('header.php');
             <!-- slider -->                 <div class="swiper-container-horizontal" id="slider">
                 <div style="transition-duration: 0ms; transform: translate3d(-4680px, 0px, 0px);" class="swiper-wrapper">
 				<?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_m_',$page, 'getNowPlayingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 6) as $row ) {
@@ -64,7 +64,7 @@ include('header.php');
                             <div role="tabpanel" class="tab-pane in fade active" id="tn-news">
                                                                     <ul data-ps-id="c089833c-a596-efa6-577c-48f2328ee954" class="tn-news ps-container ps-active-y">
                                                  <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_popular_',$page, 'getPopularTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 3) as $row ) {
@@ -124,7 +124,7 @@ include('header.php');
                 <div class="tab-content">
                     <div id="movie-featured" class="movies-list movies-list-full tab-pane in fade active">
                         <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_m_',$page) );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 16) as $row ) {
@@ -164,7 +164,7 @@ include('header.php');
                     <div id="topview-today" class="movies-list movies-list-full tab-pane in fade">
                      
                                                   <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_airing_',$page, 'getAiringTodayTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 16) as $row ) {

@@ -20,7 +20,7 @@ get_header(); ?>
                 </div>
                 <div class="movies-list movies-list-full">
                   <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_m_',$page, 'getNowPlayingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 18) as $row ) {

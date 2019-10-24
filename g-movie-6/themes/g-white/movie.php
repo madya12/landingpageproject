@@ -259,8 +259,8 @@ include('header.php');?>
 										<div role="tabpanel" class="tab-pane fade" id="casts">
 				<div class="row">
 				<?php 
-                                if (is_array($row['credits'][cast])) {
-                                foreach($row['credits'][cast] as $castrow) :
+                                if (is_array($row['credits']['cast'])) {
+                                foreach($row['credits']['cast'] as $castrow) :
      	     	                        if ($castrow['profile_path']!=null)
      	     	                        {
              	     	                        $profile_path = 'http://image.tmdb.org/t/p/w45' . $castrow['profile_path'];
@@ -294,8 +294,8 @@ include('header.php');?>
 							<div role="tabpanel" class="tab-pane fade" id="posters">
 				<div class="row">
 				<?php 
-                                if (is_array($row['images'][posters])) {
-                                        foreach($row['images'][posters] as $poster_row) :
+                                if (is_array($row['images']['posters'])) {
+                                        foreach($row['images']['posters'] as $poster_row) :
      	     	                        if ($poster_row['file_path']!=null)
      	     	                        {
              	     	                        $file_path = 'http://image.tmdb.org/t/p/w300' . $poster_row['file_path'];
@@ -321,8 +321,8 @@ include('header.php');?>
 			<div role="tabpanel" class="tab-pane fade" id="images">
 				<div class="row">
 				<?php 
-                                if (is_array($row['images'][backdrops])) {
-                                        foreach($row['images'][backdrops] as $backdrops_row) :
+                                if (is_array($row['images']['backdrops'])) {
+                                        foreach($row['images']['backdrops'] as $backdrops_row) :
      	     	                        if ($backdrops_row['file_path']!=null)
      	     	                        {
              	     	                        $file_path = 'http://image.tmdb.org/t/p/w300' . $backdrops_row['file_path'];
@@ -363,7 +363,7 @@ include('header.php');?>
 					</h3>
 					<div class="widget-content">
 					<?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_m_',$page, 'getNowPlayingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 5) as $row ) {
@@ -394,7 +394,7 @@ include('header.php');?>
 					</h3>
 					<div class="widget-content">
 					<?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_movie_upcoming_',$page, 'getUpcomingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 5) as $row ) {

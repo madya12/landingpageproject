@@ -29,7 +29,7 @@ get_header(); ?>
             </div>
             <div class="row">
                <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_movie_upcoming_',$page, 'getUpcomingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 18) as $row ) {

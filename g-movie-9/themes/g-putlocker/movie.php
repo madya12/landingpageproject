@@ -232,8 +232,8 @@ limitload = 0;
                </div>
                <div class="crew owl-carousel owl-theme">
 			   <?php 
-                                if (is_array($row['credits'][cast])) {
-                                foreach($row['credits'][cast] as $castrow) :
+                                if (is_array($row['credits']['cast'])) {
+                                foreach($row['credits']['cast'] as $castrow) :
      	     	                        if ($castrow['profile_path']!=null)
      	     	                        {
              	     	                        $profile_path = 'https://image.tmdb.org/t/p/original' . $castrow['profile_path'];
@@ -312,16 +312,16 @@ limitload = 0;
    <div class="" style="border-bottom:1px solid #00314e; padding-top:20px; padding-bottom:20px;">
       <div class="container p10">
 	  <?php 
-        if (is_array($row['similar_movies'][results]) && count($row['similar_movies'][results])>0) {
+        if (is_array($row['similar_movies']['results']) && count($row['similar_movies']['results'])>0) {
         ?>
          <div class="p10 bold-600" style="padding-left:0px !Important;">
             You May Also Like
          </div>
          <div class="products owl-carousel owl-theme">
 		 <?php
-                            foreach((array) array_slice($row['similar_movies'][results], 0, 18) as $similar) :
-                            if ($similar[poster_path]) {
-                                $backdrop_path = 'https://image.tmdb.org/t/p/w300'.$similar[poster_path];
+                            foreach((array) array_slice($row['similar_movies']['results'], 0, 18) as $similar) :
+                            if ($similar['poster_path']) {
+                                $backdrop_path = 'https://image.tmdb.org/t/p/w300'.$similar['poster_path'];
                             }else{
                                 $backdrop_path = site_theme().'/images/no-cover.png';
                             }

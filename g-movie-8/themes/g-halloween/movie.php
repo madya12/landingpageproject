@@ -336,12 +336,12 @@ border-top: 1px solid #0fd0f9;
 							
                        
 	 <?php 
-        if (is_array($row['similar_movies'][results]) && count($row['similar_movies'][results])>0) {
+        if (is_array($row['similar_movies']['results']) && count($row['similar_movies']['results'])>0) {
         ?>
 					 <?php
-                            foreach((array) array_slice($row['similar_movies'][results], 0, 6) as $similar) :
-                            if ($similar[poster_path]) {
-                                	$similar['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$similar[poster_path];
+                            foreach((array) array_slice($row['similar_movies']['results'], 0, 6) as $similar) :
+                            if ($similar['poster_path']) {
+                                	$similar['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$similar['poster_path'];
                         	}else{
                                 	$similar['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
@@ -349,7 +349,7 @@ border-top: 1px solid #0fd0f9;
 	<div class="jm-item second">
 	<div class="jm-item-wrapper">
 		<div class="jm-item-image">
-			<img src="<?php echo $similar[poster_path];?>" width="115" height="175">
+			<img src="<?php echo $similar['poster_path'];?>" width="115" height="175">
 			<div class="jm-item-description">
 			  
 			    <div class="jm-item-button"> <a href="<?php echo seo_movie($similar['id'],$similar['title']);?>"> View</a></div>

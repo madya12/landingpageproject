@@ -12,14 +12,14 @@
             </div>
             <div class="hideonmobile  col-lg-2 col-md-2 col-sm-12 col-xs-12 col-12    p10">
                <b> Genre </b> <br>
-               <?php foreach ($_cate as $cateid => $catename): ?>
+               <?php if(isset($_cate)) foreach ($_cate as $cateid => $catename): ?>
                                                             <a href="<?php echo seocat( $catename,$cateid );?>"><?php echo ucwords($catename) ?></a>
                                                             <?php endforeach ?>   <br>
             </div>
             <div class="hideonmobile col-lg-2 col-md-2 col-sm-12 col-xs-12 col-12    p10">
                <b> New Movies </b> <br>
                <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_movie_upcoming_',$page, 'getUpcomingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 10) as $row ) {

@@ -5,15 +5,15 @@
 | Template Name     : G-Silvers V.3
 | -------------------------------------------------------------------------------
 */
-if ( empty( $_GET[page] ) ) { 
+if ( empty( $_GET['page'] ) ) { 
         $pathinfo = pathinfo ($uri);
         $dirname = str_replace('/'.config('category_url').'/','',$pathinfo['dirname']);
         $filename = $pathinfo['filename'];
         $page = 1;
 }else{ 
-        $dirname = $_GET[terms];
-        $filename = $_GET[id];
-        $page = $_GET[page];
+        $dirname = $_GET['terms'];
+        $filename = $_GET['id'];
+        $page = $_GET['page'];
         $hal = ' Pages ' .$page;
         $title_after = $hal;
         $description_after = $hal . ' on ' . site_path();
@@ -72,7 +72,7 @@ include('header.php');
                         $limit  = 20; 
                         $link   = '/?action=category&terms='.$dirname.'&id='.$filename;
                         $pagination = new CSSPagination($totalResults, $limit, $link );
-                        $pagination->setPage($_GET[page]);
+                        $pagination->setPage($_GET['page']);
                        echo $pagination->showPage();
                 endif;
                 ?>

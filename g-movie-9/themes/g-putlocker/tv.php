@@ -234,8 +234,8 @@ limitload = 0;
                </div>
                <div class="crew owl-carousel owl-theme">
 			   <?php 
-                                if (is_array($row['credits'][cast])) {
-                                foreach($row['credits'][cast] as $castrow) :
+                                if (is_array($row['credits']['cast'])) {
+                                foreach($row['credits']['cast'] as $castrow) :
      	     	                        if ($castrow['profile_path']!=null)
      	     	                        {
              	     	                        $profile_path = 'https://image.tmdb.org/t/p/original' . $castrow['profile_path'];
@@ -323,8 +323,8 @@ limitload = 0;
                 if (empty($for['air_date'])) {
                     continue;
                 }
-                if ($for[poster_path]) {
-                    $poster_path = 'https://image.tmdb.org/t/p/original'.$for[poster_path];
+                if ($for['poster_path']) {
+                    $poster_path = 'https://image.tmdb.org/t/p/original'.$for['poster_path'];
                 }else{
                     $poster_path = site_theme().'/images/no-cover.png';
                 }
@@ -412,8 +412,8 @@ limitload = 0;
                 if (empty($for['air_date'])) {
                     continue;
                 }
-                if ($for[poster_path]) {
-                    $poster_path = 'https://image.tmdb.org/t/p/original'.$for[poster_path];
+                if ($for['poster_path']) {
+                    $poster_path = 'https://image.tmdb.org/t/p/original'.$for['poster_path'];
                 }else{
                     $poster_path = site_theme().'/images/no-cover.png';
                 }

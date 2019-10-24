@@ -307,7 +307,7 @@ include('header.php');?>
 <!-- Comment End -->
         </div>
         <?php 
-        if (is_array($row['similar_movies'][results]) && count($row['similar_movies'][results])>0) {
+        if (is_array($row['similar_movies']['results']) && count($row['similar_movies']['results'])>0) {
         ?>
             <div class="panel panel-body">
                 <h3 class="heading"><i class="fa fa-film"></i> Related Movies <span class="hidden-xs">for "<?php echo $title;?> (<?php echo $year;?>)"</span></h3>
@@ -315,9 +315,9 @@ include('header.php');?>
                     <div class="row">
                         <div id="owl-similar" class="owl-carousel">
                             <?php
-                            foreach((array) array_slice($row['similar_movies'][results], 0, 18) as $similar) :
-                            if ($similar[poster_path]) {
-                                $backdrop_path = 'https://image.tmdb.org/t/p/w300'.$similar[poster_path];
+                            foreach((array) array_slice($row['similar_movies']['results'], 0, 18) as $similar) :
+                            if ($similar['poster_path']) {
+                                $backdrop_path = 'https://image.tmdb.org/t/p/w300'.$similar['poster_path'];
                             }else{
                                 $backdrop_path = site_theme().'/images/no-cover.png';
                             }

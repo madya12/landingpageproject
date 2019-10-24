@@ -16,7 +16,7 @@ get_header(); ?>
     <div class="releases"><h1 style="color: #f29e37; border: 5px solid #0500040a; background: #000000a6;"><i class="fa fa-film"></i> Most Popular TV Series</h1></div>
     <div style="background-color: #000000a3; width: 100%; overflow: hidden; padding-top: 15px;">
                         <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_popular_',$page, 'getPopularTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 18) as $row ) {
@@ -61,7 +61,7 @@ get_header(); ?>
                         $limit  = 20; 
                         $link   = "/?do=tv-popular";
                         $pagination = new CSSPagination($totalResults, $limit, $link ); // create instance object
-                        $pagination->setPage($_GET[page]); // dont change it
+                        $pagination->setPage($_GET['page']); // dont change it
                        echo $pagination->showPage();
                 endif;
                 ?>

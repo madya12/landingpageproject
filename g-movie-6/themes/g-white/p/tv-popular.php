@@ -33,7 +33,7 @@ get_header(); ?>
 	</header>
 	<div class="col-container clearfix">
 	<?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_popular_',$page, 'getPopularTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 20) as $row ) {
@@ -84,7 +84,7 @@ get_header(); ?>
                         $limit  = 20; 
                         $link   = "/?do=tv-popular";
                         $pagination = new CSSPagination($totalResults, $limit, $link ); // create instance object
-                        $pagination->setPage($_GET[page]); // dont change it
+                        $pagination->setPage($_GET['page']); // dont change it
                        echo $pagination->showPage();
                 endif;
                 ?>
@@ -98,7 +98,7 @@ get_header(); ?>
 					</h3>
 					<div class="widget-content">
 					<?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_airing_',$page, 'getAiringTodayTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 5) as $row ) {
@@ -129,7 +129,7 @@ get_header(); ?>
 					</h3>
 					<div class="widget-content">
 					<?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_ontheair_',$page, 'getOnTheAirTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 5) as $row ) {

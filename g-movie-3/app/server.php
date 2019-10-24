@@ -9,8 +9,7 @@
 $uri = isset($uri) ? $uri : '';
 if (($pos = strrpos($uri, '/')) !== false) $url_str = substr($uri, $pos+1);
 
-define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT'] . $_SERVER['REQUEST_URI']);
-// define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
+define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
 define('APP_PATH', DOCUMENT_ROOT . '/app');
 define('CLASS_PATH', APP_PATH . '/class');
 
