@@ -2,7 +2,7 @@
 function getGeoIP() {
     $ip = $_SERVER['REMOTE_ADDR'];
     if ($ip != '127.0.0.1' or $ip = '::1') {
-        $details = json_decode(file_get_contents("https://ipinfo.io/{$ip}"));
+        $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}"));
         return $details->country;
     } else {
         return 'US';
@@ -103,7 +103,7 @@ function is_home(){
  *
  * @author Sean Murphy <sean@iamseanmurphy.com>
  * @copyright Copyright 2012 Sean Murphy. All rights reserved.
- * @license https://creativecommons.org/publicdomain/zero/1.0/
+ * @license http://creativecommons.org/publicdomain/zero/1.0/
  *
  */
 function permalink($str, $options = array()) {
@@ -371,9 +371,9 @@ function CURLOPT_REFERER() {
 	$grand = spintax("{com|ac|ad|ae|be|bf|bg|ch|cn|com.co|com.cr|com.hk|com.sg|co.id|co.in|co.nz|co.th|co.uk|de|dk|fr|ge|gr|ie|ir|is|it|nl|pl|se}"); 
 	$yrand = spintax("{id|fr|de|in|hk|nl|se|sg|uk}"); 
 	$refferer = array(
-		"https://www.google.$grand/search",
-		"https://$yrand.search.yahoo.com/search",
-		"https://search.yahoo.com/search",
+		"http://www.google.$grand/search",
+		"http://$yrand.search.yahoo.com/search",
+		"http://search.yahoo.com/search",
 	);
 	shuffle( $refferer );
 	$reff = $refferer[0];
@@ -383,7 +383,7 @@ function CURLOPT_REFERER() {
  * Random user agent creator
  * @since Sep 4, 2011
  * @version 1.0
- * @link https://360percents.com/
+ * @link http://360percents.com/
  * @author Luka Pušić <pusic93@gmail.com>
  */
 
@@ -557,7 +557,7 @@ function ocim_rating( $rating, $count, $aggregate ) {
 		} else {
 			$user	= "user";
 		}
-		$schema	 =	"itemprop=\"aggregateRating\" itemscope itemtype=\"https://schema.org/AggregateRating\"";
+		$schema	 =	"itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\"";
 		if ( $count >= 1 ) {
 			$rvalue	 =	sprintf( '<div class="book-rating"><span itemprop="ratingValue">%s</span>/<span itemprop="bestRating">5</span> by <span itemprop="ratingCount">%1s</span> %2s</div>', $rating, $count, $user );
 		}
@@ -604,7 +604,7 @@ function ocim_rating( $rating, $count, $aggregate ) {
 function ocim_review_rating( $rating ) {
 	$out	.=	"<div class=\"review-rating\" itemprop=\"reviewRating\">";
 	if ( $rating >= 1 ) {
-		$out	.=	"<span itemscope itemtype=\"https://schema.org/Rating\" title=\"$rating Stars\">";
+		$out	.=	"<span itemscope itemtype=\"http://schema.org/Rating\" title=\"$rating Stars\">";
 		$out	.=	"<meta itemprop=\"ratingValue\" content=\"$rating\">";
 		$out	.=	"<meta itemprop=\"bestRating\" content=\"5\">";
 		for ( $s = 0; $s <= 4; $s++ ) {
@@ -616,7 +616,7 @@ function ocim_review_rating( $rating ) {
 		}
 		$out	.=	"</span>";
 	} else {
-		$out	.=	"<span itemscope itemtype=\"https://schema.org/Rating\" title=\"Not rated yet\">";
+		$out	.=	"<span itemscope itemtype=\"http://schema.org/Rating\" title=\"Not rated yet\">";
 		$out	.=	"<meta itemprop=\"ratingValue\" content=\"$rating\">";
 		$out	.=	"<meta itemprop=\"bestRating\" content=\"5\">";
 		for ( $s = 0; $s <= 4; $s++ ) {
@@ -680,6 +680,6 @@ function seo_serie($id)
 
 function histats_write() {
     if( config('histatsID') != '') {
-        echo "<script type='text/javascript'>var _Hasync=_Hasync|| [];_Hasync.push(['Histats.start', '1,".config('histatsID').",4,0,0,0,00010000']);_Hasync.push(['Histats.fasi', '1']);_Hasync.push(['Histats.track_hits', '']);(function(){var hs=document.createElement('script'); hs.type='text/javascript'; hs.async=true;hs.src=('https://s10.histats.com/js15_as.js');(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);})();</script><noscript><a href='https://www.histats.com' target='_blank'><img src='https://sstatic1.histats.com/0.gif?".config('histatsID')."&101' alt='advanced web statistics' border='0'></a></noscript>";
+        echo "<script type='text/javascript'>var _Hasync=_Hasync|| [];_Hasync.push(['Histats.start', '1,".config('histatsID').",4,0,0,0,00010000']);_Hasync.push(['Histats.fasi', '1']);_Hasync.push(['Histats.track_hits', '']);(function(){var hs=document.createElement('script'); hs.type='text/javascript'; hs.async=true;hs.src=('http://s10.histats.com/js15_as.js');(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);})();</script><noscript><a href='http://www.histats.com' target='_blank'><img src='http://sstatic1.histats.com/0.gif?".config('histatsID')."&101' alt='advanced web statistics' border='0'></a></noscript>";
     }
 }

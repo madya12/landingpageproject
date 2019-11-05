@@ -8,23 +8,23 @@ $oc_config = array (
 
     //================================================================================================
 
-    "sitelogo"        => "Movie & TV Show",
+    "sitelogo"        => "Movie Series Online",
     
-    "sitename"        => "G-Red",
+    "sitename"        => "Movie Series Online",
 
     "sitedescription" => "Watch Full Movies Streaming HD Quality and Full Episode TV Shows for FREE",
 
     "sitekeywords"    => "full movie, full episode",
 
-    "sitethemes"      => "g-red",
+    "sitethemes"      => "g-white",
 
-    "offer_link1"     => "https://www.facebook.com/galih.sophian.50",
+    "offer_link1"     => "//look.ichlnk.com/offer?prod=3&ref=5043511",
 
-    "offer_link2"     => "https://www.facebook.com/galih.sophian.50",
+    "offer_link2"     => "//look.ichlnk.com/offer?prod=3&ref=5043511",
 
     // "sport_offer"     => "",        // Jika Belum Di Include Plugin Sport nya gak bisa di gunakan
 
-    "histatsID"       => "3743291",
+    "histatsID"       => "3907523",
 
     //================================================================================================
 
@@ -44,7 +44,7 @@ $oc_config = array (
     
     "category_url"    => "genre",
     
-    "timezone"        => "Asia/Jakarta",
+    "timezone"        => "America/Chicago",
 
     "debug"           => "true",
 

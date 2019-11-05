@@ -117,7 +117,7 @@ if ( ! file_exists( $robot.'/robots.txt' ) ) {
 	$txt	.= "Disallow: /assets\n";
 	$txt	.= "Disallow: /themes\n";
 	$txt	.= "Disallow: /*?*\n\n";
-	$txt	.= "Sitemap: https://$hostname/sitemap.xml";
+	$txt	.= "Sitemap: http://$hostname/sitemap.xml";
 	file_put_contents( $robot . $rname, $txt );
 }
 if(options('dmca') != null){

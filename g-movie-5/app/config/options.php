@@ -16,7 +16,7 @@ $oc_options = array (
     |--------------------------------------------------------------------------
     | Page View URL = Default is 'view'
     |--------------------------------------------------------------------------
-    | example = https://domain.com/view/contact/
+    | example = http://domain.com/view/contact/
     | if you want change this, please rename folder "view" on folder /oc-content/themes/themes-name/view
     */
 
@@ -26,7 +26,7 @@ $oc_options = array (
     |--------------------------------------------------------------------------
     | Movie URL = Default is 'movie'
     |--------------------------------------------------------------------------
-    | example = https://domain.com/movie/294254/maze-runner-the-scorch-trials.html
+    | example = http://domain.com/movie/294254/maze-runner-the-scorch-trials.html
     */
 
     "url_movie" => "movie",
@@ -35,7 +35,7 @@ $oc_options = array (
     |--------------------------------------------------------------------------
     | TV Show URL = Default is 'tv'
     |--------------------------------------------------------------------------
-    | example = https://domain.com/tv/1418/the-big-bang-theory.html
+    | example = http://domain.com/tv/1418/the-big-bang-theory.html
     */
 
     "url_tv" => "tv",
@@ -44,7 +44,7 @@ $oc_options = array (
     |--------------------------------------------------------------------------
     | TV Show URL (TVDB API)
     |--------------------------------------------------------------------------
-    | example = https://domain.com/tv/watching/1418
+    | example = http://domain.com/tv/watching/1418
     */
 
     "url_tvdb" => "series",
@@ -53,7 +53,7 @@ $oc_options = array (
     |--------------------------------------------------------------------------
     | Sport Landing Page URL
     |--------------------------------------------------------------------------
-    | example = https://domain.com/live-sports
+    | example = http://domain.com/live-sports
     */
 
     "url_sport" => "live",
@@ -80,15 +80,15 @@ $oc_options = array (
     |--------------------------------------------------------------------------
     | DMCA URL LINK
     |--------------------------------------------------------------------------
-    | Example = "https://domain.com/xxxx.html
-https://domain.com/xxxx.html
-https://domain.com/xxxx.html"
+    | Example = "http://domain.com/xxxx.html
+http://domain.com/xxxx.html
+http://domain.com/xxxx.html"
     | 
     | Separate by new line/Pisahkan dengan baris baru seperti diatas
     |
     */
 
-    "dmca" => "https://next-episode.tv-seriesonline.com/series/321827"
+    "dmca" => "http://next-episode.tv-seriesonline.com/series/321827"
 );
 
 $movie_title_awal = array(

@@ -8,8 +8,8 @@ class Tvdb
 {
 
 	protected $db;
-	protected $tvdb_url = 'https://thetvdb.com';
-	protected $tvdb_img = 'https://thetvdb.com/banners/';
+	protected $tvdb_url = 'http://thetvdb.com';
+	protected $tvdb_img = 'http://thetvdb.com/banners/';
 
 	public function __construct($apikey)
 	{

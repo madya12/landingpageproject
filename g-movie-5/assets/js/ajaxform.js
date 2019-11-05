@@ -1225,7 +1225,7 @@ $(document).ready(function() {
 		tunlrModal.load({
 			'modal_id' : 'service-update',
 			'header' : 'Please allow a few minutes for changes to take effect.',
-			'content' : "<p>Some websites may cache your old settings so we recommend clearing your browser and DNS cache after making changes.</p><p>For instructions click here: <a href='https://support.tunlr.com/customer/portal/articles/1909235-tunlr-not-working-basic-troubleshooting'>How to clear your DNS cache</a></p>",
+			'content' : "<p>Some websites may cache your old settings so we recommend clearing your browser and DNS cache after making changes.</p><p>For instructions click here: <a href='http://support.tunlr.com/customer/portal/articles/1909235-tunlr-not-working-basic-troubleshooting'>How to clear your DNS cache</a></p>",
 			"optout_checkbox" : true,
 			"width" : 500
 			

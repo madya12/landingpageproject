@@ -11,7 +11,7 @@
  * @version 0.1.3
  * @copyright 2012 - 2014
  * @author Ohad Raz (email: admin@bainternet.info)
- * @link https://en.bainternet.info
+ * @link http://en.bainternet.info
  * 
  * @license GNU General Public LIcense v3.0 - license.txt
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR

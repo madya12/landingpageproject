@@ -8,7 +8,7 @@ function pk_stt_function_oc_head_hook() {
 
                 if ( $_GET['s'] != '' || strpos($uri, '/'.config('search_url').'/' ) !== false) {
                         $title = strtolower( get_search_query() );
-                        if (strpos( $title , "https://" ) === false) {
+                        if (strpos( $title , "http://" ) === false) {
                         	if ( strlen($title) > 3 ) {
 			        	if ( bad_word( $title ) === false ) {
 				        	save_word($title);

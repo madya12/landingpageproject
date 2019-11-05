@@ -2,7 +2,7 @@
 class TMDB{
 
 	#@var string url of API TMDB
-	const _API_URL_ = "https://api.themoviedb.org/3/";
+	const _API_URL_ = "http://api.themoviedb.org/3/";
 
         #@var string API KEY
 	private $_apikey;
@@ -31,7 +31,7 @@ class TMDB{
                 curl_setopt($ch, CURLOPT_ENCODING, "gzip,deflate");
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5 );
-                curl_setopt($ch, CURLOPT_REFERER, "https://www.facebook.com");
+                curl_setopt($ch, CURLOPT_REFERER, "http://www.facebook.com");
                 curl_setopt($ch, CURLOPT_AUTOREFERER, true);
                 curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 	        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);

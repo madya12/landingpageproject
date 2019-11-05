@@ -1,10 +1,10 @@
 CARA PASANG LP DAN HISTATS
 PERTAMA MASUK KE FOLDER app>config> edit file yg bernama config.php
 NAH DISITU ENTAR ADA LINK OFFER SAMA ID HISTATS
-CONTOH SEPERTI GAMBAR INI https://prntscr.com/iksiof
+CONTOH SEPERTI GAMBAR INI http://prntscr.com/iksiof
 EDIT LINE 21 DAN 22 UNTUK LINK OFFER
 EDIT LINE 27 UNTUK ID HISTATS NYA
 
 UNTUK DESKRIPSI ONLINE NYA TINGGA TAMBAH /desc di akhir alamat domain anda
-CONTOH https://g-silvers.cf/desc
-
+CONTOH http://g-silvers.cf/desc
+Cara ganti link yg ada di descripsi masuk ke folder desc>edit file yg bernama config.php :)

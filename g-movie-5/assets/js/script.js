@@ -504,12 +504,12 @@ function initSocialClicks(){
 		
 		var referralLink = $('.fb-share').attr('data-attr-refkey');
 		var variation = $('.fb-share').attr('data-attr-variation');
-		var picture = 'https://cdn.tunlr.com/brand-assets/promo-23_1.jpg';
+		var picture = 'http://cdn.tunlr.com/brand-assets/promo-23_1.jpg';
 		ga('send', 'event', 'Experiment-f1', 'SocialInitialize-'+ variation +'', '');//trigger GA event for AB test
 		if(variation === 'a') {
-			picture = 'https://cdn.tunlr.com/brand-assets/promo-23_1.jpg';
+			picture = 'http://cdn.tunlr.com/brand-assets/promo-23_1.jpg';
 		} else if(variation === 'b') {
-			picture = 'https://cdn.tunlr.com/brand-assets/promo-23_2.jpg';
+			picture = 'http://cdn.tunlr.com/brand-assets/promo-23_2.jpg';
 		}
 		FB.ui({
 		  method: 'feed',

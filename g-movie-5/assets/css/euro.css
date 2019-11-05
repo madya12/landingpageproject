@@ -3518,7 +3518,7 @@ form.custom .custom.disabled {
 
 @font-face {
     font-family: 'newvidflow';
-    src: url("https://begin.lilplay.com/css/signup/movies/ce/fonts/newvidflow.eot")
+    src: url("http://begin.lilplay.com/css/signup/movies/ce/fonts/newvidflow.eot")
 }
 
 @font-face {
@@ -3664,7 +3664,7 @@ form.custom .custom.disabled {
 }
 
 .pattern-bg {
-    background: url("https://begin.lilplay.com/images/signup/movies/ce/moviepattern.jpg") #fff
+    background: url("http://begin.lilplay.com/images/signup/movies/ce/moviepattern.jpg") #fff
 }
 
 .no-mod {

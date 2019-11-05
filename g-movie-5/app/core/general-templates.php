@@ -44,7 +44,7 @@ function get_search_query( $escaped = true ) {
         global $url_str;
         if ( $escaped ):
                 if ( $_GET['s'] ):
-                        if (strpos( $_GET['s'] , 'https://' ) !== false) {	
+                        if (strpos( $_GET['s'] , 'http://' ) !== false) {	
                                 $query = $_GET['s'];
                         }else{
                                 $query = permalink( $_GET['s'], array( 'delimiter' => ' ' ) );
