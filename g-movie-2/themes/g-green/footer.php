@@ -1,4 +1,22 @@
-	<div id="featured">
+<style>
+	#featured{
+		/* background-color:#17191A; */
+		background-color:white;
+		/* color:#BBBBBB; */
+	}
+	#site-footer{
+		
+		background-color:black;
+		color:#BBBBBB;
+	}
+	a{
+		color:#BBBBBB;
+	}
+	a:hover{
+		color:white;
+	}
+	</style>
+	<div id="featured" class="border">
 		<div class="container">
 			<div class="col-md-3 col-sm-6 col-xs-6 ft-col text-center">
 				<div class="ft-icon ease">
@@ -35,22 +53,24 @@
 	<div class="container">
 		<div class="row">
 			<div class="site-links col-md-12 text-center">
-				<ul>
-					<li>
-						<a href="<?php echo view_page( 'privacy-policy' );?>">Privacy</a>
-					</li>
-					<li>
-						<a href="<?php echo view_page( 'dmca-notice' );?>">DMCA Policy</a>
-					</li>
-					<li>
-						<a href="<?php echo view_page( 'contact-us' );?>">Contact</a>
-					</li>
-					<li>
-						<a href="<?php echo site_url() ?>/sitemap.xml">Sitemap</a>
-					</li>
-				</ul>
-			</div>
-			<div class="site-credit col-md-12 text-center"> &copy;<?php echo date("Y");?>
+				<center>
+					<table style="margin-top:2%;">
+						<tr>
+							<td align="center"><a href="<?php echo view_page( 'privacy-policy' );?>">Privacy</a></td>
+						</tr>
+						<tr>
+							<td align="center"><a href="<?php echo view_page( 'dmca-notice' );?>">DMCA Policy</a></td>
+						</tr>
+						<tr>
+							<td align="center"><a href="<?php echo view_page( 'contact-us' );?>">Contact</a></td>
+						</tr>
+						<tr>
+							<td align="center"><a href="<?php echo site_url() ?>/sitemap.xml">Sitemap</a></td>
+						</tr>
+					</table>
+				<center>
+					<br>
+			<div class="site-credit col-md-12 text-center"> &copy;2017 
 				<a href="<?php echo site_url() ?>""><?php echo config('sitename') ?></a> - All rights reserved. 
 			</div>
 			<div class="site-note col-md-12 text-center">Disclaimer: All of the free movies found on this website are hosted on third-party servers that are freely available to watch online on <?php echo config('sitename') ?> for all internet users. Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves. <?php echo config('sitename') ?> is not responsible for the accuracy, compliance, copyright, legality, decency, or any other aspect of the content of other linked sites. In case of any copyright claims, Please contact the source websites directly file owners or host sites.
@@ -67,7 +87,7 @@ By accessing this site you agree to be bound by our Privacy Policy.</div>
 <script type="text/javascript" src="//code.jquery.com/jquery-2.2.0.min.js" defer></script>
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js" defer></script>
-<script type="text/javascript" src="<?php style_theme();?>/assets/js/scripts.min.js" defer></script>
+<script type="text/javascript" src="/assets/js/scripts.min.js" defer></script>
 <?php echo histats_write() ?>
 </body>
 								</html>

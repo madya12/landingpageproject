@@ -10,11 +10,15 @@
 .ease{transition:all .3s ease-in-out}
 .vam{display:table-cell;vertical-align:middle;}
 .text-color{color:#1FA611;}
-body{padding-top:71px;font-family:'Open Sans',sans-serif;background:#000 url(../images/player-bg.jpg);background-size:cover;background-attachment:fixed;color:#c3c3c3;font-size:13px;}
+body{padding-top:71px;font-family:'Open Sans',sans-serif;
+    background-image: url('../images/blackwhite.gif');
+    background-size:cover;
+    background-attachment:fixed;
+    color:#c3c3c3;font-size:13px;}
 h1,h2,h3,h4{font-family:'Oswald',sans-serif;}
 textarea{resize:vertical;}
 [class*=col-0]{float:none;display:table-cell;vertical-align:top}
-#home [class*=col-z]{padding:0;positioFn:relative;}
+#home [class*=col-z]{padding:0;position:relative; }
 span.home-label{font-family:Oswald;text-transform:uppercase;padding:7px 15px;position:absolute;left:0;z-index:1;background-color:rgb(180, 88, 0);color:#fff}
 #featured{padding:15px 0;}
 .ft-icon{font-size:40px;position:relative;top:0;}
