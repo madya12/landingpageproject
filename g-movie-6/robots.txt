@@ -4,4 +4,4 @@ Disallow: /assets
 Disallow: /themes
 Disallow: /*?*
 
-Sitemap: http://watch.imovie-series.us/sitemap.xml
+Sitemap: https://watch.imovie-series.us/sitemap.xml

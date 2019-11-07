@@ -6,10 +6,10 @@
  * @version 1.4.3
  * @requires jQuery v1.2.3+
  * @author Ryan McGeary
- * @license MIT License - http://www.opensource.org/licenses/mit-license.php
+ * @license MIT License - https://www.opensource.org/licenses/mit-license.php
  *
  * For usage and examples, visit:
- * http://timeago.yarp.com/
+ * https://timeago.yarp.com/
  *
  * Copyright (c) 2008-2015, Ryan McGeary (ryan -[at]- mcgeary [*dot*] org)
  */
