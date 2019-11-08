@@ -119,7 +119,7 @@ function ocim_data_tv( $nama = 'home_tv_', $page = 1, $get = 'getOnTheAirTVShows
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[name]) {
+                        	if ($row['name']) {
                                 	$item['title'] = $row['name'];
                         	} else {
                                 	$item['title'] = $row['original_name'];
@@ -192,7 +192,7 @@ function ocim_data_search_tv( $query = '', $page = 1) {
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[name]) {
+                        	if ($row['name']) {
                                 	$item['title'] = $row['name'];
                         	} else {
                                 	$item['title'] = $row['original_name'];
