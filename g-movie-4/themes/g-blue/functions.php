@@ -6,12 +6,10 @@
 | -------------------------------------------------------------------------------
 */
 
-$myUrl = '/project/obing1/G-movie-v2';
-
 if ($uri == site_url() . '/' . options('url_tvdb') or $uri == site_url() . '/' . options('url_tvdb') . '/') {
     header('location:'.site_url());
 }
-require_once( DOCUMENT_ROOT . $myUrl . '/app/class/class.TMDB.php');
+require_once( DOCUMENT_ROOT . '/app/class/class.TMDB.php');
 function tmdb_api() {
 	$arraytmdb = explode(",", options('tmdb_api'));
 	return $arraytmdb[array_rand($arraytmdb)];
