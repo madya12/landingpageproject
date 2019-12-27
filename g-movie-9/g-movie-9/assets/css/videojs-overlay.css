@@ -1,0 +1,56 @@
+/**
+ * videojs-overlay
+ * @version 1.0.1
+ * @copyright 2016 Brightcove, Inc.
+ * @license Apache-2.0
+ */
+.vjs-overlay,
+.vjs-overlay.vjs-overlay-top-left {
+  position: absolute;
+  width: 100%;
+  background-color: #303030; /* IE8 fallback */
+  background-color: #303030;
+  color: #fff;
+  padding: 25px;
+  border-radius: 3px;
+  top: 5px;
+  left: 5px;
+  text-align: center;
+}
+
+/* overlay alignment styles */
+.vjs-overlay.vjs-overlay-top {
+  margin-left: -16.5%;
+  left: 50%;
+}
+.vjs-overlay.vjs-overlay-top-right {
+  left: auto;
+  right: 5px;
+}
+.vjs-overlay.vjs-overlay-left {
+  top: auto;
+  margin-top: -15px;
+}
+.vjs-overlay.vjs-overlay-right {
+  left: auto;
+  right: auto;
+  top: 50%;
+  margin-top: -15px;
+}
+.vjs-overlay.vjs-overlay-bottom {
+  margin-left: -16.5%;
+  left: 132px;
+  top: 0em;
+  bottom: 0.2em;
+}
+.vjs-overlay.vjs-overlay-bottom-left {
+  bottom: 4.5em;
+  top: auto;
+  left: 5px;
+}
+.vjs-overlay.vjs-overlay-bottom-right {
+  bottom: 4.5em;
+  top: auto;
+  left: auto;
+  right: 5px;
+}
