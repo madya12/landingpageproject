@@ -1,7 +1,0 @@
-User-Agent: *
-Disallow: /app
-Disallow: /assets
-Disallow: /themes
-Disallow: /*?*
-
-Sitemap: https://watch.imovie-series.us/sitemap.xml

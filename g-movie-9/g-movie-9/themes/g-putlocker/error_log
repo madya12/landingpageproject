@@ -1,6 +1,0 @@
-[05-Dec-2018 10:57:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function site_url() in /home/u5421839/public_html/g-silvers.website/g7/themes/g-putlocker/functions.php:9
-Stack trace:
-#0 /home/u5421839/public_html/g-silvers.website/g7/themes/g-putlocker/header.php(8): include()
-#1 /home/u5421839/public_html/g-silvers.website/g7/themes/g-putlocker/index.php(9): include('/home/u5421839/...')
-#2 {main}
-  thrown in /home/u5421839/public_html/g-silvers.website/g7/themes/g-putlocker/functions.php on line 9
