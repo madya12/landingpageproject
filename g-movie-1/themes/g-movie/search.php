@@ -29,7 +29,7 @@ $newquery = bad_words( get_search_query() );
 <div class="movies-list-wrap">
 <div class="movies-list">
         <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_search_movie(limit_word($newquery, 3),$page) );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 12) as $row ) {
@@ -87,7 +87,7 @@ $newquery = bad_words( get_search_query() );
                         $limit  = 20; 
                         $link   = '/?s='.get_search_query();
                         $pagination = new CSSPagination($totalResults, $limit, $link ); // create instance object
-                        $pagination->setPage($_GET[page]); // dont change it
+                        $pagination->setPage($_GET['page']); // dont change it
                        echo $pagination->showPage();
                 endif;
                 ?>
@@ -177,7 +177,7 @@ $newquery = bad_words( get_search_query() );
                                 $limit  = 20; 
                                 $link   = '/?s='.get_search_query();
                                 $pagination = new CSSPagination($totalResults, $limit, $link ); // create instance object
-                                $pagination->setPage($_GET[page]); // dont change it
+                                $pagination->setPage($_GET['page']); // dont change it
                                 echo $pagination->showPage();
                                 endif;
                                 ?>

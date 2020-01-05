@@ -225,8 +225,8 @@
                <div class="block-actors">
                   <div id="carousel-actor">
                      <?php 
-                        if (is_array($row['credits'][cast])) {
-                        foreach($row['credits'][cast] as $castrow) :
+                        if (is_array($row['credits']['cast'])) {
+                        foreach($row['credits']['cast'] as $castrow) :
                             if ($castrow['profile_path']!=null)
                             {
                                     $profile_path = 'http://image.tmdb.org/t/p/original' . $castrow['profile_path'];
@@ -441,7 +441,7 @@
          <div class="ml-title"><span><i class="fa fa-thumbs-o-up"></i> You May Also Like</span></div>
          <div class="movies-list movies-list-full">
             <?php 
-               if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+               if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
                $Movies = unserialize( ocim_data_movie('home_movie_upcoming_',$page, 'getUpcomingMovies') );
                if( is_array($Movies['result']) ):
                foreach ( (array) array_slice($Movies['result'], 0, 6) as $row ) {
