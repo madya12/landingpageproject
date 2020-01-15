@@ -209,7 +209,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GENRES</a>
 					<ul class="dropdown-menu" style="width: 100%;">
-												<?php foreach ($_cate as $cateid => $catename): ?>
+												<?php if(isset($_cate)) foreach ($_cate as $cateid => $catename): ?>
                         <li><a href="<?php echo seocat( $catename,$cateid );?>"><?php echo ucwords($catename) ?></a></li>
                         <?php endforeach ?>
 											</ul>

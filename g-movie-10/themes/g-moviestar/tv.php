@@ -529,8 +529,8 @@ limitload = 0;
                          if (empty($for['air_date'])) {
                              continue;
                          }
-                         if ($for[poster_path]) {
-                             $poster_path = 'https://image.tmdb.org/t/p/original'.$for[poster_path];
+                         if ($for['poster_path']) {
+                             $poster_path = 'https://image.tmdb.org/t/p/original'.$for['poster_path'];
                          }else{
                              $poster_path = site_theme().'/images/no-cover.png';
                          }

@@ -14,7 +14,7 @@ get_header(); ?>
          <div class="col-sm-12">
             <h2>Now Playing</h2>
             <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_m_',$page, 'getNowPlayingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 1) as $row ) {
@@ -58,7 +58,7 @@ get_header(); ?>
       <h2>Box Office Movies</h2>
       <div class="slick-carousel slick-initialized slick-slider" id="newIn">
          <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_m_',$page, 'getNowPlayingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 18) as $row ) {
@@ -101,7 +101,7 @@ get_header(); ?>
                         $limit  = 20; 
                         $link   = "/?do=movie-playing";
                         $pagination = new CSSPagination($totalResults, $limit, $link ); // create instance object
-                        $pagination->setPage($_GET[page]); // dont change it
+                        $pagination->setPage($_GET['page']); // dont change it
                        echo $pagination->showPage();
                 endif;
                 ?></div>

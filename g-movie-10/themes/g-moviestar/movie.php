@@ -540,7 +540,7 @@ limitload = 0;
 		</div>
 		
 		<?php 
-        if (is_array($row['similar_movies'][results]) && count($row['similar_movies'][results])>0) {
+        if (is_array($row['similar_movies']['results']) && count($row['similar_movies']['results'])>0) {
         ?>
 <section class="dark">
 <div class="container section">
@@ -549,9 +549,9 @@ limitload = 0;
       <h2>Related Movies <span class="hidden-xs">for "<?php echo $title;?> (<?php echo $year;?>)"</h2>
       <div class="slick-carousel slick-initialized slick-slider" id="newIn">
          <?php
-                            foreach((array) array_slice($row['similar_movies'][results], 0, 6) as $similar) :
-                            if ($similar[poster_path]) {
-                                $poster_path = 'https://image.tmdb.org/t/p/original'.$similar[poster_path];
+                            foreach((array) array_slice($row['similar_movies']['results'], 0, 6) as $similar) :
+                            if ($similar['poster_path']) {
+                                $poster_path = 'https://image.tmdb.org/t/p/original'.$similar['poster_path'];
                             }else{
                                 $poster_path = site_theme().'/images/no-cover.png';
                             }
