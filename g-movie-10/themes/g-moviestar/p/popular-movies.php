@@ -11,11 +11,12 @@ $hack_description = 'See a full list of Popular Movies on '.site_path();
 get_header(); ?>
 <body>
 	<div class="wrapper" style="overflow: inherit;">
-		
-		<?php get_menu();?>
+    <div style="margin: 32px 32px 0px 32px ">
+        <?php get_menu();?>
+    </div>
+    <section class="dark" style="margin: 0px 32px 32px 32px; border-radius: 0px 0px 32px 32px ">
 
-<section class="dark">
-   <div class="container section remove-bottom-padding">
+    <div class="container section remove-bottom-padding">
       <div class="row comingSoon-slides">
          <div class="col-sm-12">
             <h2>Popular</h2>

@@ -9,8 +9,11 @@
    $newquery = bad_words( get_search_query() );
    ?>
 <body cz-shortcut-listen="true">
-   <?php include('menu.php');?>
-   <?php 
+    <div style="margin: 32px 32px 0px 32px ">
+        <?php get_menu();?>
+    </div>
+
+<?php
       $TV = unserialize( ocim_data_search_tv(limit_word($newquery, 3),$page) );
       if( is_array($TV['result']) ):
           foreach ( (array) array_slice($TV['result'], 0, 1) as $row ) {
@@ -29,9 +32,9 @@
       } 
       else:
           ?>
-   <div class="row">
+   <div class="row" style="margin: 0px 32px 32px 32px ">
       <div class="panel panel-default">
-         <div class="panel-body">
+         <div class="panel-body" style="margin-top: 32px;">
             <h2><i class="fa fa-exclamation"></i> No TV Show Found for this search</h2>
          </div>
       </div>
