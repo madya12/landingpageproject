@@ -29,18 +29,18 @@ function ocim_data_movie( $nama = 'home_m_', $page = 1, $get = 'getNowPlayingMov
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[title]) {
+                        	if ($row['title']) {
                                 	$item['title'] = $row['title'];
                         	} else {
                                 	$item['title'] = $row['original_title'];
                         	}
-                        	if ($row[poster_path]) {
-                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row[poster_path];
+                        	if ($row['poster_path']) {
+                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row['poster_path'];
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -74,18 +74,18 @@ function ocim_data_genre( $nama = 'home_g_', $id = '', $page = 1, $get = 'GetGen
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[title]) {
+                        	if ($row['title']) {
                                 	$item['title'] = $row['title'];
                         	} else {
                                 	$item['title'] = $row['original_title'];
                         	}
-                        	if ($row[poster_path]) {
-                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row[poster_path];
+                        	if ($row['poster_path']) {
+                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row['poster_path'];
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -119,18 +119,18 @@ function ocim_data_tv( $nama = 'home_tv_', $page = 1, $get = 'getOnTheAirTVShows
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[name]) {
+                        	if ($row['name']) {
                                 	$item['title'] = $row['name'];
                         	} else {
                                 	$item['title'] = $row['original_name'];
                         	}
-                        	if ($row[poster_path]) {
-                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row[poster_path];
+                        	if ($row['poster_path']) {
+                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row['poster_path'];
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -158,18 +158,18 @@ function ocim_data_search_movie( $query = '', $page = 1) {
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[title]) {
+                        	if ($row['title']) {
                                 	$item['title'] = $row['title'];
                         	} else {
                                 	$item['title'] = $row['original_title'];
                         	}
-                        	if ($row[poster_path]) {
-                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row[poster_path];
+                        	if ($row['poster_path']) {
+                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row['poster_path'];
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -192,18 +192,18 @@ function ocim_data_search_tv( $query = '', $page = 1) {
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[name]) {
+                        	if ($row['name']) {
                                 	$item['title'] = $row['name'];
                         	} else {
                                 	$item['title'] = $row['original_name'];
                         	}
-                        	if ($row[poster_path]) {
-                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row[poster_path];
+                        	if ($row['poster_path']) {
+                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row['poster_path'];
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
