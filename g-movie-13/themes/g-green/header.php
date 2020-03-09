@@ -99,7 +99,7 @@ shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!
 						<li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon fa fa-folder-open"></i> Genres Movies<span class="caret"></span></a>
                                         <ul class="dropdown-menu animated fadeIn" role="menu">
-                                                            <?php foreach ($_cate as $cateid => $catename): ?>
+                                                            <?php if(isset($_cate)) foreach ($_cate as $cateid => $catename): ?>
                                                             <li><a href="<?php echo seocat( $catename,$cateid );?>"><?php echo ucwords($catename) ?></a></li>
                                                             <?php endforeach ?>
                                                         </ul>

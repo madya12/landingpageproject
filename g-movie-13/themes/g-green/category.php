@@ -5,7 +5,7 @@
 | Template Name     : G-silvers V-red
 | -------------------------------------------------------------------------------
 */
-if ( empty( $_GET[page] ) ) { 
+if ( empty( $_GET['page'] ) ) {
         $pathinfo = pathinfo ($uri);
         $dirname = str_replace('/'.config('category_url').'/','',$pathinfo['dirname']);
         $filename = $pathinfo['filename'];
@@ -13,7 +13,7 @@ if ( empty( $_GET[page] ) ) {
 }else{ 
         $dirname = $_GET[terms];
         $filename = $_GET[id];
-        $page = $_GET[page];
+        $page = $_GET['page'];
         $hal = ' Pages ' .$page;
         $title_after = $hal;
         $description_after = $hal . ' on ' . site_path();
@@ -81,7 +81,7 @@ include('header.php');
                         $limit  = 20; 
                         $link   = "/?do=movie-upcoming";
                         $pagination = new CSSPagination($totalResults, $limit, $link ); // create instance object
-                        $pagination->setPage($_GET[page]); // dont change it
+                        $pagination->setPage($_GET['page']); // dont change it
                        echo $pagination->showPage();
                 endif;
                 ?>

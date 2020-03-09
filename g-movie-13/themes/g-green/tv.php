@@ -388,8 +388,8 @@ include('header.php');?>
 		<ul class="episode-list media-wrapper">
 		<?php
                         foreach((array)$row2['episodes'] as $eps) :
-                            if ($eps[still_path]) {
-                                $still_path = 'https://image.tmdb.org/t/p/original'.$eps[still_path];
+                            if ($eps['still_path']) {
+                                $still_path = 'https://image.tmdb.org/t/p/original'.$eps['still_path'];
                             }else{
                                 $still_path = site_theme().'/images/no-backdrop.png';
                             }
@@ -447,8 +447,8 @@ include('header.php');?>
                 if (empty($for['air_date'])) {
                     continue;
                 }
-                if ($for[poster_path]) {
-                    $poster_path = 'https://image.tmdb.org/t/p/original'.$for[poster_path];
+                if ($for['poster_path']) {
+                    $poster_path = 'https://image.tmdb.org/t/p/original'.$for['poster_path'];
                 }else{
                     $poster_path = site_theme().'/images/no-cover.png';
                 }
@@ -479,7 +479,7 @@ include('header.php');?>
 					</h3>
 					<div class="widget-content">
 					<?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_airing_',$page, 'getAiringTodayTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 5) as $row ) {
@@ -510,7 +510,7 @@ include('header.php');?>
 					</h3>
 					<div class="widget-content">
 					<?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_ontheair_',$page, 'getOnTheAirTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 10) as $row ) {
