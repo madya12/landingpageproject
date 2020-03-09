@@ -51,16 +51,14 @@ include('header.php');
     <div class="main-wrap">
 
         <!-- Movie Section -->
-        <div class="section section-padding movie-section">
+        <div class="section section-padding movie-section" style="margin-top: 250px">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-xs-6">
                         <div class="section-header">
                             <h2 class="section-title">In Theaters</h2>
+                            <small><a class="all-link" href="<?php echo view_page( 'movies-nowplay' );?>">See All Movies</a></small>
                         </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-6">
-                        <a class="all-link" href="<?php echo view_page( 'movies-nowplay' );?>">See All Movies</a>
                     </div>
                 </div>
 
@@ -103,6 +101,7 @@ include('header.php');
                     <div class="col-md-8">
                         <div class="section-header">
                             <h2 class="section-title">Upcoming Movie</h2>
+                            <small><a class="all-link" href="<?php echo view_page( 'upcoming-movies' );?>">See All Upcoming Movies</a></small>
                         </div>
                     </div>
                      
@@ -152,9 +151,6 @@ include('header.php');
         ?>
                     </div>
                 </div>
-                       <div class="col-sm-4 col-xs-6">
-                        <a class="all-link" href="<?php echo view_page( 'upcoming-movies' );?>">See All Upcoming Movies</a>
-                    </div>
             </div>
         </div>
         <!-- Upcoming Movie Section End -->
@@ -166,10 +162,8 @@ include('header.php');
                     <div class="col-sm-8 col-xs-6">
                         <div class="section-header">
                             <h2 class="section-title">On The Air TV Shows</h2>
+                            <small><a class="all-link" href="<?php echo view_page( 'tv-ontheair' );?>">See All Shows</a></small>
                         </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-6">
-                        <a class="all-link" href="<?php echo view_page( 'tv-ontheair' );?>">See All Shows</a>
                     </div>
                 </div>
 

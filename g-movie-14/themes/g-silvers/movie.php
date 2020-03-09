@@ -470,7 +470,7 @@ include('functions.php'); ?>
                               <div class="row">
                                  <div class="owl-carousel video-carousel video-carousel2 mw-100" id="video-carousel2">
 <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_m_',$page, 'getNowPlayingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 20) as $row ) {

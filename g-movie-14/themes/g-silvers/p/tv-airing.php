@@ -27,7 +27,7 @@ get_header(); ?>
                 <div class="row">
                     <div class="show-listing">
                      <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_airing_',$page, 'getAiringTodayTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 20) as $row ) {
@@ -71,7 +71,7 @@ get_header(); ?>
                         $limit  = 20; 
                         $link   = "/p/tv-airing/?";
                         $pagination = new CSSPagination($totalResults, $limit, $link ); // create instance object
-                        $pagination->setPage($_GET[page]); // dont change it
+                        $pagination->setPage($_GET['page']); // dont change it
                        echo $pagination->showPage();
                 endif;
                 ?>

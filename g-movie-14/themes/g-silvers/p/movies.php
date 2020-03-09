@@ -10,17 +10,15 @@ get_header(); ?>
                     <div class="col-12 col-sm-6 text-center text-sm-left">
                         <div class="section-header">
                             <h2 class="section-title">In Theaters</h2>
+                            <small><a class="all-link" href="<?php echo view_page( 'movies-nowplay' );?>">See All Movies</a></small>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 d-none d-sm-block">
-                        <a class="all-link" href="<?php echo view_page( 'movies-nowplay' );?>">See All Movies</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="owl-carousel video-carousel video-carousel2 mw-100" id="video-carousel2">
                     
                         <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_m_',$page, 'getNowPlayingMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 20) as $row ) {
@@ -55,17 +53,15 @@ get_header(); ?>
                     <div class="col-12 col-sm-6 text-center text-sm-left">
                         <div class="section-header">
                             <h2 class="section-title">Popular</h2>
+                            <small><a class="all-link" href="<?php echo view_page( 'popular-movies' );?>">See All Popular Movies</a></small>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 d-none d-sm-block">
-                         <a class="all-link" href="<?php echo view_page( 'popular-movies' );?>">See All Popular Movies</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="owl-carousel video-carousel video-carousel2 mw-100" id="video-carousel2">
                     
                         <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_movie_popular_',$page, 'getPopularMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 20) as $row ) {
@@ -102,17 +98,15 @@ get_header(); ?>
                     <div class="col-12 col-sm-6 text-center text-sm-left">
                         <div class="section-header">
                             <h2 class="section-title">Top Rated</h2>
+                            <small><a class="all-link" href="<?php echo view_page( 'toprated-movies' );?>">See All Top Rated Movies</a></small>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 d-none d-sm-block">
-                        <a class="all-link" href="<?php echo view_page( 'toprated-movies' );?>">See All Top Rated Movies</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="owl-carousel video-carousel video-carousel2 mw-100" id="video-carousel2">
                     
                         <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_movie('home_movie_toprated_',$page, 'getTopRatedMovies') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 20) as $row ) {

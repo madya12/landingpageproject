@@ -68,7 +68,7 @@ include('functions.php'); ?>
     <!-- Top Header -->
     <body style="background-color:rgb(31, 30, 28);">
        <!-- Main Header -->
-       <nav class="navbar navbar-default navbar-static-top w-100" style="min-height:50px; padding: 10px 0; background-image: none; background-color:#FFD700">
+       <nav class="navbar navbar-default navbar-static-top w-100" style="min-height:50px; padding: 10px 0; background-image: none; background-color:#40adaa">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -85,8 +85,8 @@ include('functions.php'); ?>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="main-nav-collapse">
                 <ul class="nav navbar-nav navbar-left m-0">
-                    <li class="text-shadow"><a href="/p/movies/">Movies</a></li>
-                    <li class="text-shadow"><a href="/p/show/">TV</a></li>
+                    <li><a href="/p/movies/">Movies</a></li>
+                    <li><a href="/p/show/">TV</a></li>
                     <li class="dropdown">
                         <a href="#">Categories</a>
                         <ul class="dropdown-menu">

@@ -74,7 +74,7 @@
 }
 
 .tooltip-inner, ::selection {
-	background: #FF8D1B
+	background: #40adaa
 }
 
 hr {
@@ -90,13 +90,13 @@ hr {
 	cursor: pointer
 }
 .tooltip.top .tooltip-arrow {
-	border-top-color: #FF8D1B
+	border-top-color: #40adaa
 }
 .tooltip.right .tooltip-arrow {
-	border-right-color: #FF8D1B
+	border-right-color: #40adaa
 }
 select:focus>option:checked {
-	background: #FF8D1B!important
+	background: #40adaa!important
 }
 textarea {
 	resize: vertical
@@ -243,7 +243,7 @@ textarea {
 	border-radius: 0
 }
 .breadcrumb {
-	background-color: #FF8D1B
+	background-color: #40adaa
 }
 .breadcrumb > .active {
   color: #FFFFFF;
@@ -407,12 +407,12 @@ img.main-backdrop, img.main-photo, img.main-poster {
 	padding: 5px 10px;
 	text-transform: uppercase;
 	color: #fff;
-	background: #FF8D1B;
+	background: #40adaa;
 	font-size: 13px
 }
 .sub-section:after, .widget-title:after {
 	content: "";
-	background: #FF8D1B;
+	background: #40adaa;
 	height: 1px;
 	overflow: hidden;
 	display: block;
@@ -425,7 +425,7 @@ img.main-backdrop, img.main-photo, img.main-poster {
 	text-transform: uppercase;
 	margin: 0 0 0 20px;
 	color: #fff;
-	background-color: #FF8D1B;
+	background-color: #40adaa;
 	font-size: 13px
 }
 .sub-section .more:hover {
@@ -587,18 +587,18 @@ h2.sub-title, h3.sub-title {
 	margin-bottom: 10px
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-	background-color: #FF8D1B;
-	border-color: #FF8D1B
+	background-color: #40adaa;
+	border-color: #40adaa
 }
 .pagination>li>a, .pagination>li>span {
-	color: #FF8D1B;
-	border-color: #FF8D1B;
+	color: #40adaa;
+	border-color: #40adaa;
 	background: 0 0
 }
 .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
 	background: #333;
 	color: #fff;
-	border-color: #FF8D1B
+	border-color: #40adaa
 }
 .pagination > .disabled > span,
 .pagination > .disabled > span:hover,
@@ -608,8 +608,8 @@ h2.sub-title, h3.sub-title {
 .pagination > .disabled > a:focus {
   color: #FFFFFF;
   cursor: not-allowed;
-  background-color: #FF8D1B;
-  border-color: #FF8D1B !important;
+  background-color: #40adaa;
+  border-color: #40adaa !important;
 }
 .top-content {
 	background-position: 50%
@@ -626,7 +626,7 @@ h2.sub-title, h3.sub-title {
 	color: #333
 }
 .error .alert-warning {
-	background-color: #FF8D1B;
+	background-color: #40adaa;
 	color: #ccc
 }
 .video-js {
@@ -894,7 +894,7 @@ ul#movie-cast {
 	padding: 4px 5px;
 	margin-left: 2px;
 	color: #fff;
-	background-color: #FF8D1B
+	background-color: #40adaa
 }
 .lrnav a:hover {
 	background-color: #000

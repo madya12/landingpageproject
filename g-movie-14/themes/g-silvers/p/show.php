@@ -10,17 +10,15 @@ get_header(); ?>
                     <div class="col-12 col-sm-6 text-center text-sm-left">
                         <div class="section-header">
                             <h2 class="section-title">Airing Today</h2>
+                            <small><a class="all-link" href="<?php echo view_page( 'tv-airing' );?>">See All Movies</a></small>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 d-none d-sm-block">
-                        <a class="all-link" href="<?php echo view_page( 'tv-airing' );?>">See All Movies</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="owl-carousel video-carousel video-carousel2 mw-100" id="video-carousel2">
                     
                         <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_airing_',$page, 'getAiringTodayTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 20) as $row ) {
@@ -55,17 +53,15 @@ get_header(); ?>
                     <div class="col-12 col-sm-6 text-center text-sm-left">
                         <div class="section-header">
                             <h2 class="section-title">Popular</h2>
+                            <small><a class="all-link" href="<?php echo view_page( 'tv-popular' );?>">See All Popular Movies</a></small>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 d-none d-sm-block">
-                         <a class="all-link" href="<?php echo view_page( 'tv-popular' );?>">See All Popular Movies</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="owl-carousel video-carousel video-carousel2 mw-100" id="video-carousel2">
                     
                         <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_popular_',$page, 'getPopularTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 20) as $row ) {
@@ -102,17 +98,15 @@ get_header(); ?>
                     <div class="col-12 col-sm-6 text-center text-sm-left">
                         <div class="section-header">
                             <h2 class="section-title">On the Air</h2>
+                            <small><a class="all-link" href="<?php echo view_page( 'tv-ontheair' );?>">See All Top Rated Movies</a></small>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-6 d-none d-sm-block">
-                        <a class="all-link" href="<?php echo view_page( 'tv-ontheair' );?>">See All Top Rated Movies</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="owl-carousel video-carousel video-carousel2 mw-100" id="video-carousel2">
                     
                         <?php 
-        if ( empty( $_GET[page] ) ) { $page = 1; }else{ $page = $_GET[page]; }
+        if ( empty( $_GET['page'] ) ) { $page = 1; }else{ $page = $_GET['page']; }
         $Movies = unserialize( ocim_data_tv('home_tv_ontheair_',$page, 'getOnTheAirTVShows') );
         if( is_array($Movies['result']) ):
         foreach ( (array) array_slice($Movies['result'], 0, 20) as $row ) {

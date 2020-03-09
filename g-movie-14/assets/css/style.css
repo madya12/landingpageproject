@@ -228,7 +228,7 @@ iframe[name='google_conversion_frame'] {
 
 .customSelect.customSelectOpen {
   border-color: #CCC;
-  background: url(../images/select-box-bg-on.gif) right center;
+  background: url('../images/select-box-bg-on.gif') right center;
 }
 
 .customSelect.customSelectInner{
@@ -572,7 +572,7 @@ body{
 .hero-section1 .hero-flag{
 	width: 119px;
 	height: 106px;
-	background: url(../images/heroaccent_flagshadow1.png) no-repeat transparent;
+	background: url('../images/heroaccent_flagshadow1.png') no-repeat transparent;
 	position: absolute;
 	top: 77px;
 }
@@ -615,7 +615,7 @@ img.grayscale {
 }
 
 .hero-arrow-ltr{
-	background: url(../images/heroaccent_arrow1_ltr.png) no-repeat;
+	background: url('../images/heroaccent_arrow1_ltr.png') no-repeat;
 	width: 31px;
 	height: 11px;
 	position: absolute;
@@ -623,7 +623,7 @@ img.grayscale {
 }
 
 .hero-arrow-rtl{
-	background: url(../images/heroaccent_arrow1_rtl.png) no-repeat;
+	background: url('../images/heroaccent_arrow1_rtl.png') no-repeat;
 	width: 31px;
 	height: 11px;
 	position: absolute;
@@ -640,7 +640,7 @@ img.grayscale {
 }
 
 .hero-icons{
-	background: url(../images/heroaccent-mediaicons.png) no-repeat;
+	background: url('../images/heroaccent-mediaicons.png') no-repeat;
 	height: 110px;
 	width: 22px;
 }
