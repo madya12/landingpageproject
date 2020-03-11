@@ -1,0 +1,132 @@
+main, body {
+    background-color: #3d3d3d;
+}
+
+.navbar {
+    background-color: #fcba03;
+}
+
+a.navbar-item, a.navbar-link {
+    color: white;
+    font-weight: bold;
+    font-size: large;
+}
+
+a.navbar-item:hover, a.navbar-link:hover, a.navbar-link:focus {
+    color: #fcba03;
+    background-color: white;
+}
+
+input.search {
+    border: 1px solid white;
+    border-bottom-left-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+}
+
+button.primary, a.primary {
+    background-color: #fcba03;
+    color: white;
+    border: 1px solid white;
+}
+
+button.secondary, a.secondary {
+    background-color: white;
+    color: #fcba03;
+    border: 1px solid #fcba03;
+}
+
+button.search {
+    background-color: #fcba03;
+    color: white;
+    border: 1px solid white;
+    border-bottom-right-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+
+button.primary:hover, a.primary:hover {
+    background-color: white;
+    color: #fcba03;
+    border: 1px solid white;
+}
+
+button.secondary:hover, a.secondary:hover {
+    background-color: #fcba03;
+    color: white;
+    border: 1px solid #fcba03;
+}
+
+.subtitle {
+    color: white;
+}
+
+.box {
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.image img, .movie-title {
+    border-radius: 5px;
+}
+
+.features {
+    color: #fcba03;
+    background-color: white;
+}
+
+a {
+    color: #fcba03;
+}
+
+a:hover {
+    color: white;
+}
+
+small {
+    font-size: 12px;
+    text-transform: capitalize;
+    padding: 5px;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.pagination li {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #fcba03;
+    background-color: #fcba03;
+    width: 40px;
+    border-radius: 5px;
+}
+
+.pagination li:first-child, .pagination li:last-child {
+    width: 70px;
+    padding-bottom: 7px;
+}
+
+.pagination li a {
+    color: white;
+    font-weight: bold;
+}
+
+.breadcrumb li a, .breadcrumb li.is-active a, .breadcrumb.has-succeeds-separator li+li::before {
+    color: white;
+}
+
+.breadcrumb:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.button .icon:first-child:last-child {
+    margin-right: 0;
+}
+
+.content p {
+    text-align: left;
+    padding: 30px 10px 10px;
+}
+
+.title {
+    margin: 20px;
+}
