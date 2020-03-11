@@ -16,7 +16,7 @@ function tmdb_api() {
 }
 function ocim_data_movie( $nama = 'home_m_', $page = 1, $get = 'getNowPlayingMovies') {
         $apikey = tmdb_api();
-        $tmdb   = new TMDB($apikey, en, true);
+        $tmdb   = new TMDB($apikey, 'en', true);
 	$path	= DOCUMENT_ROOT . '/cache/home';
 	$name	= $nama.$page.'.json';
 	if ( file_exists( $path . $name ) && ! ocim_expire( $path . $name ) ) {
@@ -29,18 +29,18 @@ function ocim_data_movie( $nama = 'home_m_', $page = 1, $get = 'getNowPlayingMov
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[title]) {
+                        	if ($row['title']) {
                                 	$item['title'] = $row['title'];
                         	} else {
                                 	$item['title'] = $row['original_title'];
                         	}
-                        	if ($row[poster_path]) {
-                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row[poster_path];
+                        	if ($row['poster_path']) {
+                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row['poster_path'];
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -61,7 +61,7 @@ function ocim_data_movie( $nama = 'home_m_', $page = 1, $get = 'getNowPlayingMov
 }
 function ocim_data_genre( $nama = 'home_g_', $id = '', $page = 1, $get = 'GetGenreMovies') {
         $apikey = tmdb_api();
-        $tmdb   = new TMDB($apikey, en, true);
+        $tmdb   = new TMDB($apikey, 'en', true);
 
 	$path	= DOCUMENT_ROOT . '/cache/search/';
 	$name	= $nama.$page.'.json';
@@ -74,18 +74,18 @@ function ocim_data_genre( $nama = 'home_g_', $id = '', $page = 1, $get = 'GetGen
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[title]) {
+                        	if ($row['title']) {
                                 	$item['title'] = $row['title'];
                         	} else {
                                 	$item['title'] = $row['original_title'];
                         	}
-                        	if ($row[poster_path]) {
-                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row[poster_path];
+                        	if ($row['poster_path']) {
+                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row['poster_path'];
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -106,7 +106,7 @@ function ocim_data_genre( $nama = 'home_g_', $id = '', $page = 1, $get = 'GetGen
 }
 function ocim_data_tv( $nama = 'home_tv_', $page = 1, $get = 'getOnTheAirTVShows') {
         $apikey = tmdb_api();
-        $tmdb   = new TMDB($apikey, en, true);
+        $tmdb   = new TMDB($apikey, 'en', true);
 
 	$path	= DOCUMENT_ROOT . '/cache/home/';
 	$name	= $nama.$page.'.json';
@@ -119,18 +119,18 @@ function ocim_data_tv( $nama = 'home_tv_', $page = 1, $get = 'getOnTheAirTVShows
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[name]) {
+                        	if ($row['name']) {
                                 	$item['title'] = $row['name'];
                         	} else {
                                 	$item['title'] = $row['original_name'];
                         	}
-                        	if ($row[poster_path]) {
-                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row[poster_path];
+                        	if ($row['poster_path']) {
+                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row['poster_path'];
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -151,25 +151,25 @@ function ocim_data_tv( $nama = 'home_tv_', $page = 1, $get = 'getOnTheAirTVShows
 }
 function ocim_data_search_movie( $query = '', $page = 1) {
         $apikey = tmdb_api();
-        $tmdb   = new TMDB($apikey, en, true);
+        $tmdb   = new TMDB($apikey, 'en', true);
 
 		$Movie = $tmdb->searchMovie($query,$page);
 		if ( $Movie['results'] ) {
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[title]) {
+                        	if ($row['title']) {
                                 	$item['title'] = $row['title'];
                         	} else {
                                 	$item['title'] = $row['original_title'];
                         	}
-                        	if ($row[poster_path]) {
-                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row[poster_path];
+                        	if ($row['poster_path']) {
+                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row['poster_path'];
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -186,24 +186,24 @@ function ocim_data_search_movie( $query = '', $page = 1) {
 }
 function ocim_data_search_tv( $query = '', $page = 1) {
         $apikey = tmdb_api();
-        $tmdb   = new TMDB($apikey, en, true);
+        $tmdb   = new TMDB($apikey, 'en', true);
 		$Movie = $tmdb->searchTVShow($query,$page);
 		if ( $Movie['results'] ) {
                         $results = array();
                         foreach((array)$Movie['results'] as $row) {
 	                        $item['id'] =  $row['id'];
-                        	if ($row[name]) {
+                        	if ($row['name']) {
                                 	$item['title'] = $row['name'];
                         	} else {
                                 	$item['title'] = $row['original_name'];
                         	}
-                        	if ($row[poster_path]) {
-                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row[poster_path];
+                        	if ($row['poster_path']) {
+                                	$item['poster_path'] = 'https://image.tmdb.org/t/p/w300'.$row['poster_path'];
                         	}else{
                                 	$item['poster_path'] = site_theme().'/images/no-cover.png';
                         	}
-                        	if ($row[backdrop_path]) {
-                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row[backdrop_path];
+                        	if ($row['backdrop_path']) {
+                                	$item['backdrop_path'] = 'https://image.tmdb.org/t/p/w780'.$row['backdrop_path'];
                         	}else{
                                 	$item['backdrop_path'] = site_theme().'/images/no-backdrop.png';
                         	}
@@ -265,11 +265,11 @@ if ( isset($_GET['id'] ) || strposa($uri, options('url_movie') ) ) {
                 $row = unserialize( $data );
 	} else {
                 $apikey = tmdb_api();
-                $tmdb = new TMDB($apikey, en, true);
+                $tmdb = new TMDB($apikey, 'en', true);
                 $row = $tmdb->getMovie($TMDBID);
         }
 
-                if ( !$row[status_code] == 34 ) {
+                if ( !$row['status_code'] == 34 ) {
                         $title          = $row['title'];
                         $cm['id']       = $TMDBID;
                         $cm['title']    = $row['title'];
@@ -286,15 +286,15 @@ if ( isset($_GET['id'] ) || strposa($uri, options('url_movie') ) ) {
                         $runtime        = $row['runtime'];
                         $vote_count     = $row['vote_count'];
 
-                        if ($row[images]['backdrops']!=null) {
-                                shuffle($row[images]['backdrops']);
-                                foreach($row[images]['backdrops'] as $result) {
+                        if ($row['images']['backdrops']!=null) {
+                                shuffle($row['images']['backdrops']);
+                                foreach($row['images']['backdrops'] as $result) {
                                         $images = 'https://image.tmdb.org/t/p/original' . $result['file_path'];
                                         $w780 = 'https://image.tmdb.org/t/p/w780' . $result['file_path'];
                                 }
-                        } elseif ($row[images]['posters']!=null){
-                                shuffle($row[images]['posters']);
-                                foreach($row[images]['posters'] as $result) {
+                        } elseif ($row['images']['posters']!=null){
+                                shuffle($row['images']['posters']);
+                                foreach($row['images']['posters'] as $result) {
                                         $images = 'https://image.tmdb.org/t/p/original' . $result['file_path'];
                                         $w780 = 'https://image.tmdb.org/t/p/w780' . $result['file_path'];
                                 }
@@ -316,9 +316,9 @@ if ( isset($_GET['id'] ) || strposa($uri, options('url_movie') ) ) {
      	     	        if (is_array($row['genres'])){
              	     	        foreach($row['genres'] as $result) : $category = $result['name'];$categoryid = $result['id'];endforeach;
      	     	        }
-     	     	        if (is_array($row['credits'][cast]))
+     	     	        if (is_array($row['credits']['cast']))
      	     	        {       
-             	     	        $ic = 0;$casts = array();foreach($row['credits'][cast] as $result) :$casts[] = '<span itemprop="actor" itemscope itemtype="https://schema.org/Person"><span itemprop="name">'.$result['name'].'</span></span>';if ($ic++ == 10) break;endforeach;
+             	     	        $ic = 0;$casts = array();foreach($row['credits']['cast'] as $result) :$casts[] = '<span itemprop="actor" itemscope itemtype="https://schema.org/Person"><span itemprop="name">'.$result['name'].'</span></span>';if ($ic++ == 10) break;endforeach;
              	     	        $cast = implode(", ",$casts);
      	     	        }
                         if($row['vote_average'] > 0) {
@@ -364,7 +364,7 @@ if ( $_GET['action'] == 'tv' || strposa($uri, options('url_tv') ) ) :
 
                 if(strpos($_GET['id'], '-') !== false) {
                         $apikey = tmdb_api();
-                        $tmdb = new TMDB($apikey, en, true);
+                        $tmdb = new TMDB($apikey, 'en', true);
                         $str = explode("-", $_GET['id']);
                         $TMDBID = $str[0];
                         if($str[2] != ''):
@@ -395,7 +395,7 @@ if ( $_GET['action'] == 'tv' || strposa($uri, options('url_tv') ) ) :
 
                                 if($str[2] != ''):
                                         $apikey = tmdb_api();
-                                        $tmdb = new TMDB($apikey, en, true);
+                                        $tmdb = new TMDB($apikey, 'en', true);
                                         $row = $tmdb->getTVShow($TMDBID);
                                         $row2 = $tmdb->getTVSeason($TMDBID, '/season/'.$str[1]);
                                         $row3 = $tmdb->getTVSeason($TMDBID, '/season/'.$str[1]. '/episode/'. $str[2]);
@@ -409,7 +409,7 @@ if ( $_GET['action'] == 'tv' || strposa($uri, options('url_tv') ) ) :
 
                                 elseif($str[1] != ''):
                                         $apikey = tmdb_api();
-                                        $tmdb = new TMDB($apikey, en, true);
+                                        $tmdb = new TMDB($apikey, 'en', true);
                                         $row = $tmdb->getTVShow($TMDBID);
                                         $row2 = $tmdb->getTVSeason($TMDBID, '/season/'.$str[1]);
                                         $title = $row['name'] .' - '.$row2['name'];
@@ -420,7 +420,7 @@ if ( $_GET['action'] == 'tv' || strposa($uri, options('url_tv') ) ) :
                                         $description = $row['overview'];
                                 else:
                                         $apikey = tmdb_api();
-                                        $tmdb = new TMDB($apikey, en, true);
+                                        $tmdb = new TMDB($apikey, 'en', true);
                                         $row = $tmdb->getTVShow($TMDBID);
                                         $title = $row['name'];
 			                $randone = $tv_title_awal[mt_rand(0, count($tv_title_awal) - 1)];
@@ -455,9 +455,9 @@ if ( $_GET['action'] == 'tv' || strposa($uri, options('url_tv') ) ) :
                         $number_of_seasons = $row['number_of_seasons'];
                         $status = $row['status'];
 
-                        if ($row[images]['backdrops']!=null) {
-                                shuffle($row[images]['backdrops']);
-                                foreach($row[images]['backdrops'] as $result) {
+                        if ($row['images']['backdrops']!=null) {
+                                shuffle($row['images']['backdrops']);
+                                foreach($row['images']['backdrops'] as $result) {
                                         $images = 'https://image.tmdb.org/t/p/original' . $result['file_path'];
                                         $w600 = 'https://image.tmdb.org/t/p/w600' . $result['file_path'];
                                 }
@@ -482,9 +482,9 @@ if ( $_GET['action'] == 'tv' || strposa($uri, options('url_tv') ) ) :
      	     	        if (is_array($row['genres'])){
              	     	        foreach($row['genres'] as $result) : $category = $result['name'];$categoryid = $result['id'];endforeach;
      	     	        }
-     	     	        if (is_array($row['credits'][cast]))
+     	     	        if (is_array($row['credits']['cast']))
      	     	        {       
-             	     	        $ic = 0;$casts = array();foreach($row['credits'][cast] as $result) :$casts[] = '<span itemprop="actor" itemscope itemtype="https://schema.org/Person">'.$result['name'].'</span>';if ($ic++ == 10) break;endforeach;
+             	     	        $ic = 0;$casts = array();foreach($row['credits']['cast'] as $result) :$casts[] = '<span itemprop="actor" itemscope itemtype="https://schema.org/Person">'.$result['name'].'</span>';if ($ic++ == 10) break;endforeach;
              	     	        $cast = implode(", ",$casts);
      	     	        }
                         if($row['vote_average'] > 0) {

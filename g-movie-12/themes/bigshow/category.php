@@ -5,18 +5,18 @@
 | Template Name     : G-Silvers V.3
 | -------------------------------------------------------------------------------
 */
-if ( empty( $_GET[page] ) ) { 
-        $pathinfo = pathinfo ($uri);
-        $dirname = str_replace('/'.config('category_url').'/','',$pathinfo['dirname']);
-        $filename = $pathinfo['filename'];
-        $page = 1;
-}else{ 
-        $dirname = $_GET[terms];
-        $filename = $_GET[id];
-        $page = $_GET[page];
-        $hal = ' Pages ' .$page;
-        $title_after = $hal;
-        $description_after = $hal . ' on ' . site_path();
+if (empty($_GET['page'])) {
+    $pathinfo = pathinfo($uri);
+    $dirname = str_replace('/' . config('category_url') . '/', '', $pathinfo['dirname']);
+    $filename = $pathinfo['filename'];
+    $page = 1;
+} else {
+    $dirname = $_GET['terms'];
+    $filename = $_GET['id'];
+    $page = $_GET['page'];
+    $hal = ' Pages ' . $page;
+    $title_after = $hal;
+    $description_after = $hal . ' on ' . site_path();
 }
 
 $hack_title = ucwords($dirname) . ' Movies';
@@ -24,11 +24,11 @@ include('header.php');
 ?>
     <!-- Page Header -->
     <div class="page-header" style="  background-image: url(<?php style_theme() ?>/assets/images/bg/page-header.png);
-  background-position: center center;
-  background-size: cover; ">
+            background-position: center center;
+            background-size: cover; ">
         <div class="page-header-overlay">
             <div class="container">
-                <h2 class="page-title">Category for "<?php echo $dirname;?>"<?php echo $hal;?></h2>
+                <h2 class="page-title">Category for "<?php echo $dirname; ?>"<?php echo $hal; ?></h2>
             </div>
         </div>
     </div>
@@ -39,55 +39,60 @@ include('header.php');
             <div class="container">
                 <div class="row">
                     <div class="show-listing">
-                     
-					 <?php 
-        $Movies = unserialize( ocim_data_genre('home_genre_'.$filename.'_',$filename,$page) );
-        if( is_array($Movies['result']) ):
-        foreach ( (array) array_slice($Movies['result'], 0, 20) as $row ) {
-                ?>
-                        <div class="col-md-3 col-sm-4 col-xs-6">
-                            <div class="video-item">
-                                <div class="thumb-wrap">
-                                    <img src="<?php echo $row['poster_path'];?>" alt="Play <?php echo $row['title'];?>">
-                                    <span class="rating"><?php echo $row['vote_average'];?></span>
-                                    <div class="thumb-hover">
-                                        <a class="play-video" href="<?php echo seo_movie($row['id'],$row['title']);?>" title="Play <?php echo $row['title'];?>"><i class="fa fa-play"></i></a>
+
+                        <?php
+                        $Movies = unserialize(ocim_data_genre('home_genre_' . $filename . '_', $filename, $page));
+                        if (is_array($Movies['result'])):
+                            foreach ((array)array_slice($Movies['result'], 0, 20) as $row) {
+                                ?>
+                                <div class="col-md-3 col-sm-4 col-xs-6">
+                                    <div class="video-item">
+                                        <div class="thumb-wrap">
+                                            <img src="<?php echo $row['poster_path']; ?>"
+                                                 alt="Play <?php echo $row['title']; ?>">
+                                            <span class="rating"><?php echo $row['vote_average']; ?></span>
+                                            <div class="thumb-hover">
+                                                <a class="play-video"
+                                                   href="<?php echo seo_movie($row['id'], $row['title']); ?>"
+                                                   title="Play <?php echo $row['title']; ?>"><i class="fa fa-play"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="video-details">
+                                            <h4 class="video-title"><a
+                                                        href="<?php echo seo_movie($row['id'], $row['title']); ?>"
+                                                        title="<?php echo $row['title']; ?>"><?php echo $row['title']; ?></a>
+                                            </h4>
+                                            <p class="video-release-on"><?php echo date('Y-m-d', strtotime($row['release_date'])); ?></p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="video-details">
-                                    <h4 class="video-title"><a href="<?php echo seo_movie($row['id'],$row['title']);?>" title="<?php echo $row['title'];?>"><?php echo $row['title'];?></a></h4>
-                                    <p class="video-release-on"><?php echo date('Y-m-d', strtotime( $row['release_date'] ) );?></p>
-                                </div>
-                            </div>
-                        </div>
-                        <?php 
-                }
-        endif; 
-        ?>
-                        
-                                                 
-                                    
-                            <div class="col-xs-12"> 
+                                <?php
+                            }
+                        endif;
+                        ?>
+
+
+                        <div class="col-xs-12">
                             <!-- Video Pagination -->
                             <nav class="navigation pagination" role="navigation">
-                                <div class="nav-links">        
-                                 <?php 
-                if ($Movies['total_results'][0] > 19) :
-                        require_once( DOCUMENT_ROOT. '/app/class/CSSPagination.class.php');
+                                <div class="nav-links">
+                                    <?php
+                                    if ($Movies['total_results'][0] > 19) :
+                                        require_once(DOCUMENT_ROOT . '/app/class/CSSPagination.class.php');
 
-                        if ($Movies['total_results'][0] > 1000) :
-                                $totalResults = 1000;
-                        else:
-                                $totalResults = $Movies['total_results'][0];
-                        endif;
-                        $limit  = 20; 
-                        $link   = '/?action=category&terms='.$dirname.'&id='.$filename;
-                        $pagination = new CSSPagination($totalResults, $limit, $link );
-                        $pagination->setPage($_GET[page]);
-                       echo $pagination->showPage();
-                endif;
-                ?>
-				</div>
+                                        if ($Movies['total_results'][0] > 1000) :
+                                            $totalResults = 1000;
+                                        else:
+                                            $totalResults = $Movies['total_results'][0];
+                                        endif;
+                                        $limit = 20;
+                                        $link = '/?action=category&terms=' . $dirname . '&id=' . $filename;
+                                        $pagination = new CSSPagination($totalResults, $limit, $link);
+                                        $pagination->setPage($_GET['page']);
+                                        echo $pagination->showPage();
+                                    endif;
+                                    ?>
+                                </div>
                             </nav>
                             <!-- Video Pagination End -->
                         </div>
